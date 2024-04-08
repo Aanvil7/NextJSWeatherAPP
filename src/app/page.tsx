@@ -51,9 +51,15 @@ export default function Home() {
                 {weatherData && <WeatherIcon weatherId={weatherData.weather[0].id} />}
                 <h1 className="text-xl font-bold mt-4">Weather in {city}</h1>
                 <div className="mt-6 flex space-x-6">
+                <div></div>
+                <div className="grid grid-cols-3 gap-4 items-center">
+                <div></div>
                 <Stat unit="°C" value={weatherData?.main?.temp || 0} label="Temperature" size="large" />
-                <Stat unit="km/h" value={weatherData?.wind?.speed || 0} label="Wind Speed" />
+                <div></div>
+                <Stat unit="°C" value={weatherData?.main?.temp_min || 0} label="Min Temp" />
+                <Stat unit="°C" value={weatherData?.main?.temp_max || 0} label="Max Temp" />
                 <Stat unit="%" value={weatherData?.main?.humidity || 0} label="Humidity" />
+                </div>
                 </div>
             </div>
         </Card>
